@@ -1,0 +1,6 @@
+C:\Users\User>mysqldump --where="true limit 100" mysql help_keyword > limit_hkeyword.sql
+
+C:\Users\User>mysql sample < limit_hkeyword.sql
+ERROR 3723 (HY000) at line 25: The table 'help_keyword' may not be created in the reserved tablespace 'mysql'.
+
+C:\Users\User>
