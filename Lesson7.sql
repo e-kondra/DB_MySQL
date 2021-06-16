@@ -1,6 +1,6 @@
 /*1. Составьте список пользователей users, которые осуществили хотя бы один заказ orders в интернет магазине.*/
 
-select u.* from users u, orders o where o.user_id = u.id;  
+select u.* from users u, orders o where o.user_id = u.id GROUP BY u.id; 
 
 /*2. Выведите список товаров products и разделов catalogs, который соответствует товару.*/
 
