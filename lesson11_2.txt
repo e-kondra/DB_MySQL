@@ -1,0 +1,25 @@
+-- 1.В базе данных Redis подберите коллекцию для подсчета посещений с определенных IP-адресов.*/
+
+sadd ip '150.0.0.1' '155.0.2.1' '160.0.0.2'
+
+scard ip
+
+-- 2. При помощи базы данных Redis решите задачу поиска имени пользователя по электронному адресу и наоборот, поиск электронного адреса пользователя по его имени.
+
+mset kondra kondra@mail.ru kondra@mail.ru kondra
+
+get kondra
+get kondra@mail.ru
+
+-- 3.Организуйте хранение категорий и товарных позиций учебной базы данных shop в СУБД MongoDB.
+use shop
+
+db.shop.insert ({catalogs: {1: 'Процессоры', 2: 'Материнские платы', 3: 'Видеокарты', 4: 'Жесткие диски'}})
+
+db.shop.insert ({products: {2: ['AMD FX-8320E', null, 7700, 1]},{3: ['AMD FX-9000', null, 9780, 1]},
+{4: ['ASUS ROG MAXIMUS X HERO', 'this is a great motherboard', 29500, 2]}})
+
+
+db.shop.find(catalogs)
+
+db.shop.find(products.3: 'AMD FX-9000')
